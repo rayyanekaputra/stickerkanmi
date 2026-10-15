@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sticker-maker"
+version = "0.2.0"
+description = "Lay out transparent images on printable sticker sheets with hand-cutting guide outlines"
+requires-python = ">=3.11"
+dependencies = [
+    "pillow",
+    "numpy",
+    "opencv-python-headless",
+    "shapely>=2.0",
+    "cairosvg",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+sticker-sheet = "sticker_maker.cli:main"
+
+[tool.setuptools]
+packages = ["sticker_maker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
