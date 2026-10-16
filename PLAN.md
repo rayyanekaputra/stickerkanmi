@@ -48,10 +48,10 @@ Before building more, confirm the core is right on paper.
 
 ## Phase 2: Restructure into a package ✅
 
-- [x] `sticker_maker/` package: `units`, `config`, `io`, `outline`, `layout`,
-      `render`, `cli`; `sticker_sheet.py` kept as a thin shim
+- [x] `stickerkanmi/` package: `units`, `config`, `io`, `outline`, `layout`,
+      `render`, `cli`; run from a checkout with `python -m stickerkanmi`
 - [x] Settings as a `SheetConfig` dataclass (all lengths in mm)
-- [x] `pyproject.toml` with a `sticker-sheet` console entry point
+- [x] `pyproject.toml` with a `stickerkanmi` console entry point
 - [x] pytest: units, layout math, outline geometry (one polygon, clearance,
       offset distance, merged pieces, holes, specks), rendering, I/O
 - [x] Golden-image test (`tests/golden/problems_a4_100dpi.png`)

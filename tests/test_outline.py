@@ -4,7 +4,7 @@ from PIL import Image
 from shapely.geometry import Polygon
 
 from conftest import FIXTURES
-from sticker_maker.outline import MIN_CLEARANCE, art_shape, cut_outline
+from stickerkanmi.outline import MIN_CLEARANCE, art_shape, cut_outline
 
 OFFSET, SMOOTH = 30.0, 36.0  # px; ~2.5 / 3 mm at 300 DPI
 

@@ -1,8 +1,8 @@
 import pytest
 
-from sticker_maker.config import SheetConfig, StickerSpec
-from sticker_maker.layout import LayoutError, expand_copies, guide_gap_warning, make_grid
-from sticker_maker.units import mm_to_px
+from stickerkanmi.config import SheetConfig, StickerSpec
+from stickerkanmi.layout import LayoutError, expand_copies, guide_gap_warning, make_grid
+from stickerkanmi.units import mm_to_px
 
 
 def test_stretched_grid_fills_page_inside_margins():

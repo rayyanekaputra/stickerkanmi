@@ -15,9 +15,9 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 ## Usage
 
 ```sh
-.venv/bin/sticker-sheet <folder> --grid 3x5 --out sheet.jpg
-.venv/bin/sticker-sheet --calibrate     # printer check page
-.venv/bin/sticker-sheet --help
+.venv/bin/stickerkanmi <folder> --grid 3x5 --out sheet.jpg
+.venv/bin/stickerkanmi --calibrate     # printer check page
+.venv/bin/stickerkanmi --help
 ```
 
 Print at **100% / actual size** with "fit to page" turned off. If you don't,

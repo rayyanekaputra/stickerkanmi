@@ -1,6 +1,6 @@
 import pytest
 
-from sticker_maker.units import mm_to_px, parse_length, parse_size
+from stickerkanmi.units import mm_to_px, parse_length, parse_size
 
 
 def test_parse_length_units():

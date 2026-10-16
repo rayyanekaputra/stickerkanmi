@@ -5,9 +5,9 @@ import pytest
 from PIL import Image
 
 from conftest import FIXTURES, ICONS, ROOT
-from sticker_maker import io as sio
-from sticker_maker.config import SheetConfig, load_specs
-from sticker_maker.render import dash_runs, render_calibration, render_pages
+from stickerkanmi import io as sio
+from stickerkanmi.config import SheetConfig, load_specs
+from stickerkanmi.render import dash_runs, render_calibration, render_pages
 
 GOLDEN = ROOT / "tests" / "golden"
 

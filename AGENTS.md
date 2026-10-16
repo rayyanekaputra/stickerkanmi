@@ -1,14 +1,13 @@
-# Sticker Maker (stickerkanmi)
+# stickerkanmi
 
 Project name: **stickerkanmi** (Makassar-accented Bahasa for "let's sticker
-it"), used in `README.md`. Package/CLI names (`sticker_maker`,
-`sticker-sheet`) are unchanged.
+it"). Package `stickerkanmi/`, console command `stickerkanmi`.
 
 Lays out a folder of transparent images (PNG/SVG) onto printable sheets and
 draws a cut-guide outline around each one, for hand-cutting stickers printed on
 a regular home printer.
 
-Current stage: Python CLI package (`sticker_maker/`), phases 0–4 of `PLAN.md`
+Current stage: Python CLI package (`stickerkanmi/`), phases 0–4 of `PLAN.md`
 built. Long-term goal: a compiled desktop app with a GUI (backlog). See
 `PLAN.md` for phases and open questions.
 
@@ -64,11 +63,11 @@ capped at 1000 px and scaled back); user-facing units are mm or inches.
 
 ## Layout
 
-`sticker_maker/`: `units` (length parsing), `config` (`SheetConfig`,
+`stickerkanmi/`: `units` (length parsing), `config` (`SheetConfig`,
 `stickers.toml` overrides), `io` (load/save, ICC→sRGB, SVG via Cairo buffer),
 `outline` (pure geometry), `layout` (paper, grid, paging), `render` (sizing,
 compositing, lines, preview, calibration page), `cli` (argparse only).
-`sticker_sheet.py` is a shim for running from a checkout.
+`python -m stickerkanmi` runs it from a checkout (`__main__.py`).
 
 Sizing: cells stretch to fill the page unless `--size` is given; `--grid
 auto` needs `--size`. If a traced outline overflows its cell, the art is
@@ -94,9 +93,9 @@ compiled GUI app later (pure-Python or wheels with bundled binaries).
 
 ```sh
 python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
-.venv/bin/sticker-sheet <folder> --grid 3x5 --out sheet.jpg
-.venv/bin/sticker-sheet --calibrate                  # printer check page
-.venv/bin/sticker-sheet --help                       # ends with 3 examples
+.venv/bin/stickerkanmi <folder> --grid 3x5 --out sheet.jpg
+.venv/bin/stickerkanmi --calibrate                  # printer check page
+.venv/bin/stickerkanmi --help                       # ends with 3 examples
 .venv/bin/python -m pytest
 UPDATE_GOLDEN=1 .venv/bin/python -m pytest -k golden # after an intended visual change
 .venv/bin/python tests/fixtures/make_fixtures.py     # regenerate problem images

@@ -25,13 +25,13 @@ Per-file settings (copies, size, rotate, skip) go in <folder>/{toml}.
 EXAMPLES = """\
 examples:
   # 3x5 stickers on A4, one JPG per page
-  sticker-sheet assets/pixelarticons --grid 3x5 --out sheet.jpg
+  stickerkanmi assets/pixelarticons --grid 3x5 --out sheet.jpg
 
   # as many 40 mm stickers as fit, 2 copies of each, last page filled up
-  sticker-sheet my-stickers --grid auto --size 40mm --copies 2 --fill-page
+  stickerkanmi my-stickers --grid auto --size 40mm --copies 2 --fill-page
 
   # US Letter in inches, all stickers at one shared scale, wider cut margin
-  sticker-sheet my-stickers --paper letter --units in --sizing uniform --offset 0.12in
+  stickerkanmi my-stickers --paper letter --units in --sizing uniform --offset 0.12in
 """
 
 
@@ -63,7 +63,7 @@ def _color(text):
 
 def build_parser():
     ap = argparse.ArgumentParser(
-        prog="sticker-sheet", description=DESCRIPTION, epilog=EXAMPLES,
+        prog="stickerkanmi", description=DESCRIPTION, epilog=EXAMPLES,
         formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("folder", type=Path, nargs="?", help="folder of transparent PNG/SVG images")
     ap.add_argument("--out", type=Path, default=Path("sheet.jpg"),
