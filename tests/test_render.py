@@ -31,15 +31,16 @@ def test_dash_runs_line_up_across_segments():
 
 def test_pages_and_paging():
     cfg = SheetConfig(grid=(2, 2), dpi=100)
-    pages, grid = render_pages(specs_for(ICONS, cfg, ["heart", "moon", "zap", "sun", "bug"]),
-                               cfg, log=lambda m: None)
+    pages, grid, count = render_pages(specs_for(ICONS, cfg, ["heart", "moon", "zap", "sun", "bug"]),
+                                      cfg, log=lambda m: None)
     assert len(pages) == 2
+    assert count == 5
     assert pages[0].size == (grid.page_w, grid.page_h)
 
 
 def test_fill_page_and_copies():
     cfg = SheetConfig(grid=(3, 3), dpi=60, copies=2, fill_page=True)
-    pages, _ = render_pages(specs_for(ICONS, cfg, ["heart", "moon"]), cfg, log=lambda m: None)
+    pages, *_ = render_pages(specs_for(ICONS, cfg, ["heart", "moon"]), cfg, log=lambda m: None)
     assert len(pages) == 1
 
 

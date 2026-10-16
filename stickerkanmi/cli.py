@@ -146,6 +146,10 @@ def config_from_args(args):
         sys.exit(f"error: {e}")
 
 
+def _plural(n, word):
+    return f"{n} {word}{'' if n == 1 else 's'}"
+
+
 def _log(msg):
     print(msg, file=sys.stderr)
 
@@ -175,21 +179,24 @@ def main(argv=None):
 
     try:
         specs = load_specs(files, args.folder, cfg, log=_log)
-        pages, grid = render_pages(specs, cfg, log=_log)
+        pages, grid, count = render_pages(specs, cfg, log=_log)
         print(describe(grid, cfg))
+        print(f"{_plural(count, 'sticker')} on {_plural(len(pages), 'page')} "
+              f"(up to {grid.per_page} per page)")
         for out, page in zip(sio.page_paths(args.out, len(pages), fmt), pages):
             sio.save_page(page, out, fmt, cfg.dpi)
             print(f"wrote {out}")
         if args.preview:
             cfg.preview = True
-            previews, _ = render_pages(specs, cfg, log=lambda m: None)
+            previews, *_ = render_pages(specs, cfg, log=lambda m: None)
             stem_out = args.out.with_stem(args.out.stem + "_preview")
             for out, page in zip(sio.page_paths(stem_out, len(previews), fmt), previews):
                 sio.save_page(page, out, fmt, cfg.dpi)
                 print(f"wrote {out} (preview, not for printing)")
     except (LayoutError, RenderError, ValueError) as e:
         sys.exit(f"error: {e}")
-    print("\nPrint at 100% / 'actual size' (not 'fit to page') to keep sizes correct.")
+    every = f"all {len(pages)} pages " if len(pages) > 1 else ""
+    print(f"\nPrint {every}at 100% / 'actual size' (not 'fit to page') to keep sizes correct.")
 
 
 if __name__ == "__main__":

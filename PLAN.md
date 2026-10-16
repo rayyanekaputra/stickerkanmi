@@ -67,6 +67,8 @@ Before building more, confirm the core is right on paper.
 - [x] Auto-rotate 90° when the art prints ≥3% larger (`--rotate auto|never`,
       default auto)
 - [x] `--copies N` and `--fill-page`
+- [x] Multi-page output (`sheet.jpg`, `sheet_2.jpg`, ...); the CLI prints
+      "N stickers on P pages" up front and "Print all P pages" at the end
 - [x] Per-file overrides in `<folder>/stickers.toml`: copies, size, rotate,
       skip
 - [ ] Packed layout (non-grid nesting): stretch goal, not built. Only if the

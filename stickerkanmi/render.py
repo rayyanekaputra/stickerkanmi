@@ -249,7 +249,7 @@ def _shadow(canvas, polygons, dpi):
 
 
 def render_pages(specs, cfg, log=print):
-    """Lay out `specs` (StickerSpecs) and return a list of RGB page images."""
+    """Lay out `specs` (StickerSpecs); return (RGB page images, grid, sticker count)."""
     grid = make_grid(cfg)
     stickers = load_stickers(specs, grid, cfg, log)
     if not stickers:
@@ -282,7 +282,7 @@ def render_pages(specs, cfg, log=print):
             x0, y0 = round(x + w / 2 - ox), round(y + h / 2 - oy)
             placed.append((pl, (x0, y0), affinity.translate(pl.outline, x0, y0)))
         pages.append(_compose(grid, placed, cfg, bg))
-    return pages, grid
+    return pages, grid, len(items)
 
 
 def _compose(grid, placed, cfg, bg):
