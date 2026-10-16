@@ -1,18 +1,17 @@
 # stickerkanmi
 
-*"Let's sticker it"*, in Makassar-accented Bahasa.
+*"let's sticker it"*, in makassar-accented bahasa.
 
-stickerkanmi lays out a folder of transparent images (PNG/SVG) on printable
-sheets and draws a cut-guide outline around each one. It's made for stickers
-printed on sticker paper with an ordinary home printer and cut out by hand.
+if youre too lazy to layout you stickers evenly-spaced or to maximize your
+paper efficiency. stickerkanmi is your go to choice
 
-## Install
+## install
 
 ```sh
 python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 ```
 
-## Usage
+## usage
 
 ```sh
 .venv/bin/stickerkanmi <folder> --grid 3x5 --out sheet.jpg
@@ -20,5 +19,5 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 .venv/bin/stickerkanmi --help
 ```
 
-Print at **100% / actual size** with "fit to page" turned off. If you don't,
+print at **100% / actual size** with "fit to page" turned off. if you don't,
 the stickers won't come out at the sizes you set.
