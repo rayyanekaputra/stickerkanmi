@@ -1,4 +1,8 @@
-# Sticker Maker
+# Sticker Maker (stickerkanmi)
+
+Project name: **stickerkanmi** (Makassar-accented Bahasa for "let's sticker
+it"), used in `README.md`. Package/CLI names (`sticker_maker`,
+`sticker-sheet`) are unchanged.
 
 Lays out a folder of transparent images (PNG/SVG) onto printable sheets and
 draws a cut-guide outline around each one, for hand-cutting stickers printed on
