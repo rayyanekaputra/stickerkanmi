@@ -1,6 +1,6 @@
 # stickerkanmi
 
-*"let's sticker it"*, in makassar-accented bahasa.
+*"let's sticker it"*, in bahasa (makassar accent).
 
 if youre too lazy to layout you stickers evenly-spaced or to maximize your
 paper efficiency. stickerkanmi is your go to choice
@@ -12,6 +12,7 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 ```
 
 ## usage
+simply point it at a folder of your stickers (png, svg). it'll detect every sticker in that folder then render them in papers, dynamically ofcourse based on your settings.
 
 ```sh
 .venv/bin/stickerkanmi <folder> --grid 3x5 --out sheet.jpg
